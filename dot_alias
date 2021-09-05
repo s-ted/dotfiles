@@ -1,0 +1,38 @@
+#alias v='f -e vim' # quick opening files with vim
+#alias v='f -t -e vim -b viminfo'
+alias o='a -e xdg-open' # quick opening files with xdg-open
+
+alias cat='bat'
+
+alias sg="sk --ansi -i -c 'rg --color=always --line-number \"{}\"' --delimiter ':' --preview 'bat --color always -H {2} {1}'"
+
+alias sf="sk --ansi -i --delimiter ':' --preview 'bat --color always -H {2} {1}'"
+
+#alias gt='git town'
+
+
+alias ls='exa -F'
+alias l='exa -lhF --git --time-style iso -snew'
+alias ll='l -a'
+
+alias ps='procs'
+alias tig='gitui'
+
+
+
+alias m='less'
+alias j='jobs'
+
+# find in history
+alias hg='fc -l 0|grep'
+
+# global aliases (do not need to be at the beginning of the command line)
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep'
+alias -g L="| less"
+alias -g M="| more"
+alias -g X='| xclip -selection clipboard'
+alias -g LL="2>&1 | less"
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"

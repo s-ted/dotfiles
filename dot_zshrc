@@ -1,0 +1,112 @@
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored _match _correct _approximate
+zstyle ':completion:*' expand prefix suffix
+zstyle ':completion:*' file-sort name
+zstyle ':completion:*' ignore-parents parent pwd ..
+zstyle ':completion:*' insert-unambiguous true
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' list-suffixes true
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]} r:|[._-]=* r:|=*' 'r:|[._-]=** r:|=**' 'l:|=* r:|=*'
+zstyle ':completion:*' max-errors 2 numeric
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' original true
+zstyle ':completion:*' preserve-prefix '//[^/]##/'
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' squeeze-slashes true
+zstyle :compinstall filename '/home/ted/.zshrc'
+
+
+autoload -Uz compinit
+source ~/.zinit/bin/zinit.zsh
+compinit
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+bindkey -e
+# End of lines configured by zsh-newuser-install
+
+
+setopt autopushd               # automatically append dirs to the push/pop list
+setopt pushdignoredups         # and don't duplicate them
+setopt listpacked              # compact completion lists
+setopt nolisttypes             # show types in completion
+#setopt extendedglob            # weird & wacky pattern matching - yay zsh!
+setopt completeinword          # not just at the end
+setopt alwaystoend             # when complete from middle, move cursor
+setopt correct                 # spelling correction
+setopt nopromptcr              # don't add \n which overwrites cmds with no \n
+setopt histverify              # when using ! cmds, confirm first
+setopt interactivecomments     # escape commands so i can use them later
+setopt printexitvalue          # alert me if something's failed
+
+# woo! so glad i found this. jump to each element in a path with m-f m-b, same
+# for kill-word, etc.
+export WORDCHARS=''
+
+# history related stuff.
+export HISTSIZE=100000
+export SAVEHIST=100000
+export HISTFILE=~/.zsh_history_$HOST
+setopt hist_ignore_dups        # ignore same commands run twice+
+setopt appendhistory           # don't overwrite history
+setopt share_history
+## Extended history.
+## Instead of just a list of commands, append it with this:
+## `:<beginning time since epoch>:<elapsed seconds>:<command>'.
+setopt extended_history
+
+#Disable core dumps
+limit coredumpsize 0
+
+
+
+export PAGER='/bin/less'
+export MANPAGER='/bin/bat -p'
+
+
+export PATH="/home/ted/.local/bin:/usr/local/bin:/home/ted/.cargo/bin:$PATH"
+
+
+if [[ -z "$ZSH_CACHE_DIR" ]]; then
+  ZSH_CACHE_DIR="/home/ted/.cache/zsh"
+fi
+mkdir -p "$ZSH_CACHE_DIR/fastd-init-cache"
+
+TIPZ_TEXT='💡'
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
+
+bindkey '^R' history-incremental-pattern-search-backward
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+export XDG_CURRENT_DESKTOP='Unity'
+
+[[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="ted"
+
+
+
+#eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+
+export GRADLE_HOME=/home/ted/.gradle # for vscode java
+
+
+. ~/.shell-keys
+
+zstyle ':prezto:module:ssh:load' identities id_rsa.github-perso.pem id_dsa git.pem perso.pem
+
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+source ~/.config/zinitrc.zsh
+
+#
+# Alias
+#
+if [ -f ~/.alias ]; then
+  . ~/.alias
+fi
+
+
