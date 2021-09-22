@@ -78,9 +78,17 @@ TIPZ_TEXT='💡'
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
 
 bindkey '^R' history-incremental-pattern-search-backward
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+
+# ZSH LAST ARG FROM EARLIER COMMAND WITH [ALT]-[.]
+bindkey '\e.' insert-last-word
+
+
 
 export EDITOR="nvim"
 export VISUAL="nvim"
+export BROWSER="firefox"
 
 export XDG_CURRENT_DESKTOP='Unity'
 
