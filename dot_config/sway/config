@@ -258,6 +258,12 @@ bindsym XF86MonBrightnessDown exec brightnessctl s -- -20%
 
 include /etc/sway/config.d/*
 
+# clamshell mode
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+exec_always /home/ted/.local/bin/deactivate-screen-on-lid-close
+
 exec --no-startup-id ~/.cargo/bin/workstyle &> /tmp/workstyle.log
 
 
