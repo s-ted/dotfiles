@@ -19,7 +19,7 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | rofi -modi combi,window,ssh -show combi -combi-modi window,drun,run | xargs swaymsg exec --
-set $menu dmenu_path | rofi -modi combi -show-icons -matching fuzzy -show combi -combi-modi "window,drun,ssh,clipboard:greenclip print,run" -run-command '{cmd}' -theme android_notification | xargs swaymsg exec --
+set $menu dmenu_path | rofi -modi combi -show-icons -matching fuzzy -show combi -combi-modi "drun,window,ssh,clipboard:greenclip print,run" -run-command '{cmd}' -theme android_notification | xargs swaymsg exec --
 
 ### Output configuration
 #
