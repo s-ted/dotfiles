@@ -20,7 +20,7 @@ zinit light ogham/exa
 
 zstyle ":history-search-multi-word" page-size "11"
 zinit ice wait"1" lucid
-zinit light zdharma/history-search-multi-word
+zinit light zdharma-continuum/history-search-multi-word
 
 # starship
 zinit ice as"command" from"gh-r" \
@@ -53,7 +53,7 @@ zinit wait"2" lucid light-mode for \
 
 zinit wait lucid light-mode for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-    zdharma/fast-syntax-highlighting \
+    zdharma-continuum/fast-syntax-highlighting \
  blockf \
     zsh-users/zsh-completions \
  atload"!_zsh_autosuggest_start" \
