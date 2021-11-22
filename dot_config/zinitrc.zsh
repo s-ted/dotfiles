@@ -11,11 +11,11 @@ zinit ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
 zinit light sharkdp/fd
 
 # sharkdp/bat
-zinit ice as"command" from"gh-r" mv"bat* -> bat" pick"bat/bat"
+zinit ice wait"2" as"command" from"gh-r" mv"bat* -> bat" pick"bat/bat"
 zinit light sharkdp/bat
 
 # ogham/exa, replacement for ls
-zinit ice wait"2" lucid from"gh-r" as"program" mv"exa* -> exa"
+zinit ice wait"2" lucid from"gh-r" as"program" mv"bin/exa* -> exa"
 zinit light ogham/exa
 
 zstyle ":history-search-multi-word" page-size "11"
@@ -29,10 +29,10 @@ zinit ice as"command" from"gh-r" \
 zinit light starship/starship
 
 
-zinit ice svn
+zinit ice wait"1" svn
 zinit snippet PZT::modules/git
 
-zinit ice svn
+zinit ice wait"1" svn
 zinit snippet PZT::modules/docker
 
 zinit wait"2" lucid light-mode for \
