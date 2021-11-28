@@ -7,11 +7,11 @@ zinit light trapd00r/LS_COLORS
 
 
 # sharkdp/fd
-zinit ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
+zinit ice wait"2" lucid as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
 zinit light sharkdp/fd
 
 # sharkdp/bat
-zinit ice wait"2" as"command" from"gh-r" mv"bat* -> bat" pick"bat/bat"
+zinit ice wait"2" lucid as"command" from"gh-r" mv"bat* -> bat" pick"bat/bat"
 zinit light sharkdp/bat
 
 # ogham/exa, replacement for ls
@@ -29,10 +29,10 @@ zinit ice as"command" from"gh-r" \
 zinit light starship/starship
 
 
-zinit ice wait"1" svn
+zinit ice wait"1" lucid svn
 zinit snippet PZT::modules/git
 
-zinit ice wait"1" svn
+zinit ice wait"1" lucid svn
 zinit snippet PZT::modules/docker
 
 zinit wait"2" lucid light-mode for \
