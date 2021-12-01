@@ -266,5 +266,6 @@ exec_always /home/ted/.local/bin/deactivate-screen-on-lid-close
 
 exec --no-startup-id /usr/bin/sworkstyle &> /tmp/sworkstyle.log
 
+exec way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1
 
 default_border none
