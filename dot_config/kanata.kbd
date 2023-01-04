@@ -1,0 +1,228 @@
+;; Comments are prefixed by double-semicolon. A single semicolon is parsed as the
+;; keyboard key. Comments are ignored for the configuration file.
+;;
+;; This configuration language is Lisp-like. If you're unfamiliar with Lisp,
+;; don't be alarmed. The maintainer jtroo is also unfamiliar with Lisp. You
+;; don't need to know Lisp in-depth to be able to configure kanata.
+;;
+;; If you follow along with the examples, you should be fine. Kanata should
+;; also hopefully have helpful error messages in case something goes wrong.
+;; If you need help, you are welcome to ask.
+
+(defcfg
+  ;; If you are using Windows, you do not need the linux-dev line below, but
+  ;; you still need a defcfg entry. You can leave the linux-dev entry and it
+  ;; will be ignored or you can delete it if desired.
+  ;;
+  ;; Your keyboard device may differ from this. I believe /dev/input/by-id/
+  ;; is preferable; I recall reading that it's less likely to change names on you,
+  ;; but I didn't find any keyboard device in there in my VM.
+;;  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
+  linux-dev /dev/input/by-path/pci-0000\:00\:14.0-usb-0\:3.2.3.3\:1.0-event-kbd
+)
+
+;; Only one defsrc is allowed.
+;;
+;; defsrc defines the keys that will be intercepted by kanata. The order of the
+;; keys matches with deflayer declarations and all deflayer declarations must
+;; have the same number of keys as defsrc. Any keys not listed in defsrc will
+;; be passed straight to the operating system.
+(defsrc
+                                 del
+  grv   1    2    3    4    5         6    7    8    9    0    -    =
+  tab   q    w    e    r    t    bspc y    u    i    o    p    [    ]
+  lsft  a    s    d    f    g    ret  h    j    k    l    ;    '    rsft
+        z    x    c    v    b         n    m    ,    .    /    \
+  lctl  pp                  spc                 
+        lmet lalt                               ralt                rctl
+)
+
+;; The first layer defined is the layer that will be active by default when
+;; kanata starts up. This layer is the standard QWERTY layout except for the
+;; backtick/grave key (@grl) which is an alias for a tap-hold key.
+;;
+;; There are currently a maximum of 25 layers allowed.
+;; The dvorak layer remaps the keys to the dvorak layout. In addition there is
+;; another tap-hold key: @cap. This key retains caps lock functionality when
+;; quickly tapped but is read as left-control when held.
+(deflayer dvorak
+                                 del
+  @grl  @m1  @m2  @m3  @m4  @m5       @m6  @m7  @m8  @m9  @m0  [    ]
+  @tab  '    ,    .    p    y    bspc f    g    c    r    l    /    =
+  lsft  @a   o    e    u    i    ret  d    h    t    n    @s   -    @rsft
+        ;    q    j    k    x         b    m    w    v    z    \ 
+  lctl  @meh                @spc                 
+        lmet @e                                 @ralt               @multra
+)
+
+(deflayer ted
+                                 del
+  @grl  @m1  @m2  @m3  @m4  @m5       @m6  @m7  @m8  @m9  @m0  XX   XX
+  @tab  XX   @*   u    d    /    bspc b    f    l    w    j    @?   XX
+  lsft  @a   o    i    t    g    ret  ,    s    n    r    @h   XX   @rsft
+        @@   ;    y    p    k         v    c    m    x    q    XX
+  lctl  @meh                @spc                 
+        lmet @e                                 @ralt               @multra
+)
+
+
+(defalias
+  * S-8
+  ? S-/
+  @ S-2
+
+  _ S--
+  < S-,
+  lpar S-9
+  > S-.
+  rpar S-0
+
+
+  m1 M-1
+  m2 M-2
+  m3 M-3
+  m4 M-4
+  m5 M-5
+  m6 M-6
+  m7 M-7
+  m8 M-8
+  m9 M-9
+  m0 M-0
+)
+
+(deflayer qwerty
+                                 _
+  @grl  _    _    _    _    _         _    _    _    _    _    _    _
+  _     _    _    _    _    _    _    _    _    _    _    _    _    _
+  _     _    _    _    _    _    _    _    _    _    _    _    _    _
+        _    _    _    _    _         _    _    _    _    _    _
+  _     _                   _                 
+        _    _                                  _                   _
+)
+
+(deflayer lower
+                                 _
+  @grl  S-1  S-2  S-3  S-4  S-5       S-6  S-7  S-8  S-9  S-0  S-[  S-]
+  _     _    _    _    _    _    _    _    _    _    _    _    _    _
+  _     4    3    2    1    0    _    5    6    7    8    9    -    _
+        _    _    _    _    _         _    _    _    _    _    _
+  _     _                   _                 
+        _    _                                  @ultra              _
+)
+
+(deflayer higher
+                                 _
+  @grl  @é   @ê   @è   @à   @ù        @ç   S-7  S-8  S-9  S-0  S-[  S-]
+  _     grv  S-8  S-=  '    S-4  _    S-5  S-'  =    XX   S-6  S-7  _
+  _     @_   @<   S-{  [    @lpar _   @rpar ]   S-}  @>   -    _    _
+        _    _    _    _    _         _    _    _    _    _    _
+  _     _                   _                 
+        _    @ultra                             _                   _
+)
+
+(deflayer ultra
+                                 _
+  @grl  _    _    _    _    _         _    _    _    _    _    _    _
+  _     _    _    _    _    _    _    _    _    _    _    _    _    _
+  _     _    _    _    _    _    _    _    _    _    _    _    _    _
+        _    _    _    _    _         _    _    _    _    _    _
+  _     _                   _                 
+        _    _                                  _                   _
+)
+
+(deflayer multra
+                                 _
+  @grl  _    _    _    _    _         _    _    _    _    _    _    _
+  _     _    _    _    _    _    _    _    _    _    _    _    _    _
+  _     _    _    _    _    _    _    _    _    _    _    _    _    _
+        _    _    _    _    _         _    _    _    _    _    _
+  _     _                   _                 
+        _    _                                  _                   _
+)
+
+(deflayer spaced
+                                 _
+  @grl  _    _    _    _    _         _    _    _    _    _    _    _
+  _     _    _    _    _    _    _    _    _    _    _    _    _    _
+  _     _    _    _    _    _    _    _    _    _    _    _    _    _
+        _    _    _    _    _         _    _    _    _    _    _
+  _     _                   _                 
+        _    _                                  _                   _
+)
+
+(defalias é (macro A-e e))
+(defalias É (macro A-e S-e))
+(defalias è (macro A-grv e))
+(defalias ê (macro A-i e))
+(defalias Ê (macro A-i S-e))
+(defalias à (macro A-grv a))
+(defalias À (macro A-grv S-a))
+(defalias ù (macro A-grv u))
+(defalias ç A-c)
+(defalias Ç A-S-c)
+
+
+;; defalias is used to declare a shortcut for a more complicated action to keep
+;; the deflayer declarations clean and aligned. The alignment in deflayers is not
+;; necessary, but is strongly recommended for ease of understanding visually.
+;;
+;; Aliases are referred to by `@<alias_name>`.
+(defalias
+  ;; tap: backtick (grave), hold: toggle layer-switching layer while held
+  grl (tap-hold 200 200 grv (layer-toggle layers))
+
+  ;; layer-switch changes the base layer.
+  dvk (layer-switch dvorak)
+  qwr (layer-switch qwerty)
+  ted (layer-switch ted)
+
+  ;; del triple => vim save
+  del (tap-dance 200 (del (macro esc S-; w enter) (macro esc S-; w q enter)))
+
+  ;; use cap as esc, long as ctrl
+  cap (tap-hold 200 200 esc lctl)
+
+  ;; long press keep all the way up / down
+  pgup (tap-hold 200 200 pgup home)
+  pgdn (tap-hold 200 200 pgdn end)
+
+  ;; lower - higher layers
+  rsft lalt
+  e    (tap-hold 200 200 e (layer-toggle lower))
+  lalt (layer-toggle lower)
+  ralt (layer-toggle higher)
+
+  spc (tap-hold 200 200 spc (layer-toggle spaced))
+  ultra (layer-toggle ultra) 
+  multra (layer-toggle multra) 
+
+  meh (multi lctl alt lsft lmet)
+
+
+  ;; use pinky keys as shifts
+  a (tap-hold 200 200 a lsft)
+  s (tap-hold 200 200 s rsft)
+  h (tap-hold 200 200 h rsft)
+
+  ;; -- Mod-tap --
+  tab (tap-hold 200 200 tab lalt)
+)
+
+;; The `lrld` action stands for "live reload". This will re-parse everything
+;; except for defcfg. I.e. in Linux, you cannot live reload and switch keyboard
+;; devices for the time being.
+;;
+;; The keys 1 and 2 switch the base layer to qwerty and dvorak respectively.
+;;
+;; Apart from the layer switching and live reload, all other keys are the
+;; underscore _ which means "transparent". Transparent means the base layer
+;; behaviour is used when pressing that key.
+(deflayer layers
+                                 _
+  _     lrld @qwr @dvk @ted _         _    _    _    _    _    _    _ 
+  _     _    _    _    _    _    _    _    _    _    _    _    _    _
+  _     _    _    _    _    _    _    _    _    _    _    _    _    _
+        _    _    _    _    _         _    _    _    _    _    _
+  _     _                   _                 
+        _    _                                  _                   _
+)

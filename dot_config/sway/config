@@ -43,7 +43,7 @@ exec swayidle -w \
          timeout 360 'swaylock -fektF -c 000000 -i ~/wallpapers/current' \
          timeout 330 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -fektF -c 000000 -i ~/wallpapers/current' \
-	 before-sleep 'playerctl pause'
+         before-sleep 'playerctl pause'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -65,8 +65,8 @@ exec swayidle -w \
 input * {
 	xkb_layout "us"
 	#xkb_variant "dvorak-intl"
-	xkb_variant "dvorak"
-	xkb_options "compose:ralt,caps:none"
+#	xkb_variant "dvorak"
+#	xkb_options "compose:ralt,caps:none"
 }
 
 ### Key bindings
@@ -258,6 +258,8 @@ bindsym XF86MonBrightnessDown exec brightnessctl s -- -20%
 
 include /etc/sway/config.d/*
 
+exec_always kanata -c ~/.config/kanata.kbd &> /tmp/kanata.log
+
 # clamshell mode
 set $laptop eDP-1
 bindswitch --reload --locked lid:on output $laptop disable
@@ -266,6 +268,8 @@ exec_always /home/ted/.local/bin/deactivate-screen-on-lid-close
 
 exec --no-startup-id /usr/bin/sworkstyle &> /tmp/sworkstyle.log
 
-exec way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1
+#exec way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1
+
+exec nm-applet --indicator &
 
 default_border none
