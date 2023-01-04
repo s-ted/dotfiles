@@ -5,7 +5,6 @@ zinit ice wait"2" lucid atclone"dircolors -b LS_COLORS > clrs.zsh" \
     atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
 zinit light trapd00r/LS_COLORS
 
-
 # sharkdp/fd
 zinit ice wait"2" lucid as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
 zinit light sharkdp/fd
@@ -18,16 +17,9 @@ zinit light sharkdp/bat
 zinit ice wait"2" lucid from"gh-r" as"program" mv"bin/exa* -> exa"
 zinit light ogham/exa
 
-zstyle ":history-search-multi-word" page-size "11"
-zinit ice wait"1" lucid
-zinit light zdharma-continuum/history-search-multi-word
-
-# starship
-zinit ice as"command" from"gh-r" \
-          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-          atpull"%atclone" src"init.zsh"
-zinit light starship/starship
-
+#zstyle ":history-search-multi-word" page-size "11"
+#zinit ice wait"1" lucid
+#zinit light zdharma-continuum/history-search-multi-word
 
 zinit ice wait"1" lucid svn
 zinit snippet PZT::modules/git

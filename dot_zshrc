@@ -92,9 +92,9 @@ bindkey "^[[1;3D" backward-word
 bindkey '\e.' insert-last-word
 
 
-
-export EDITOR="nvim"
-export VISUAL="nvim"
+export EDITOR="$(command -v nvim 2>/dev/null || command -v vim 2>/dev/null || command -v vi)"
+export VISUAL="$EDITOR"
+export DIFFPROG="/usr/bin/vim"
 export BROWSER="firefox"
 
 export XDG_CURRENT_DESKTOP='Unity'
@@ -103,7 +103,7 @@ export XDG_CURRENT_DESKTOP='Unity'
 
 
 
-#eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 export GRADLE_HOME=/home/ted/.gradle # for vscode java
@@ -143,3 +143,7 @@ if [[ "$TERM" == (Eterm*|alacritty*|aterm*|gnome*|konsole*|kterm*|putty*|rxvt*|s
 	add-zsh-hook -Uz precmd xterm_title_precmd
 	add-zsh-hook -Uz preexec xterm_title_preexec
 fi
+
+export MCFLY_FUZZY=2
+eval "$(mcfly init zsh)"
+
