@@ -40,9 +40,9 @@ output * bg ~/wallpapers/current fill
 exec swayidle -w \
          timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          timeout 300 'playerctl pause' \
-         timeout 360 'swaylock -fektF -c 000000 -i ~/wallpapers/current' \
+         timeout 360 'swaylock -feF --image ~/wallpapers/current --clock --indicator --effect-greyscale --effect-blur 7x5 --effect-pixelate 3 --grace 30 --indicator-idle-visible --grace-no-mouse --grace-no-touch --fade-in 1' \
          timeout 330 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -fektF -c 000000 -i ~/wallpapers/current' \
+         before-sleep 'swaylock -feF --image ~/wallpapers/current --clock --indicator --effect-greyscale --effect-blur 7x5 --effect-pixelate 3' \
          before-sleep 'playerctl pause'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -84,7 +84,7 @@ input * {
 
     bindsym $mod+b exec killall -SIGUSR1 waybar
 
-    bindsym $mod+l exec swaylock -fektF -c 000000 -i ~/wallpapers/current
+    bindsym $mod+l exec swaylock -feF --screenshots --clock --indicator --effect-greyscale --effect-blur 7x5 --effect-pixelate 3 --fade-in 1 --indicator-idle-visible
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -107,10 +107,10 @@ input * {
 #    bindsym $mod+$up focus up
 #    bindsym $mod+$right focus right
     # Or use $mod+[up|down|left|right]
-    bindsym $mod+Left focus left
+#    bindsym $mod+Left focus left
     bindsym $mod+Down focus down
     bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
+#    bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
     bindsym $mod+Shift+$left move left
@@ -153,6 +153,9 @@ set $msg "9"
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+    bindsym $mod+Escape workspace back_and_forth
+    bindsym $mod+Left workspace prev
+    bindsym $mod+Right workspace next
 
 workspace_auto_back_and_forth yes
 
@@ -224,19 +227,34 @@ bindsym $mod+Shift+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
+##bar {
+##    position top
+##
+##    # When the status_command prints a new line to stdout, swaybar updates.
+##    # The default just shows the current date and time.
+##    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+##
+##    swaybar_command waybar
+##
+##    colors {
+##        statusline #ffffff
+##        background #323232
+##        inactive_workspace #32323200 #32323200 #5c5c5c
+##    }
+##}
+
 bar {
+    font pango:DejaVu Sans Mono, FontAwesome 12
     position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-
-    swaybar_command waybar
-
+    status_command i3status-rs
     colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        separator #666666
+        background #222222
+        statusline #dddddd
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
     }
 }
 
@@ -271,5 +289,6 @@ exec --no-startup-id /usr/bin/sworkstyle &> /tmp/sworkstyle.log
 #exec way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1
 
 exec nm-applet --indicator &
+exec copyq &
 
 default_border none

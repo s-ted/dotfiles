@@ -147,3 +147,5 @@ fi
 export MCFLY_FUZZY=2
 eval "$(mcfly init zsh)"
 
+
+eval "$(direnv hook zsh)"

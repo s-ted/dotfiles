@@ -1,3 +1,5 @@
+fallback = ''
+
 [matching]
 '/tutanota/' = ''
 'VSCodium' = ''
@@ -7,3 +9,139 @@
 'Portfolio Performance' = '📈' 
 '/ranger/' = ''
 'MPlayer' = ''
+
+'discord' = ''
+'balena-etcher' = ''
+'Chia Blockchain' = ''
+'Steam' = ''
+'vlc' = ''
+'org.qbittorrent.qBittorrent' = ''
+'Thunderbird' = ''
+'thunderbird' = ''
+'Postman' = ''
+'Insomnia' = ''
+'Bitwarden' = ''
+'Slack' = ''
+'Code' = ''
+'code-oss' = ''
+'Spotify' = ''
+'/NVIM ?\w*/' = ''
+'/npm/' = ''
+'/node/' = ''
+'/yarn/' = ''
+'Alacritty' = ''
+'telegramdesktop' = ''
+'Telegram' = ''
+'Wfica' = ''
+'org.remmina.Remmina' = ''
+'SchildiChat' = ''
+'Element' = ''
+'nheko' = ''
+'/Firefox .*Private Browsing/' = ''
+'/(?i)Google Drive.*Firefox/' = ''
+'/(?i)Google Calendar.*Firefox/' = ''
+'/(?i)MAX.*Iridium/' = ''
+'/(?i)MAX.*Chromium/' = ''
+'/(?i)Dashboards -.*Iridium/' = ''
+'/(?i)Dashboards -.*Chromium/' = ''
+'/Twitter/' = ''
+'/eBay/' = ''
+'/(?i)reddit.*Firefox/' = ''
+'/(?i)drive.*Firefox/' = ''
+'/(?i)play.*Firefox/' = ''
+'/(?i)Github/' = ''
+'/Google/' = ''
+'/.exe/' = '︁'
+'yakyak' = '🙷'
+'copyq' = ''
+'Microsoft Teams - Preview' = '🗩︁'
+'Microsoft Teams - Insiders' = '🗩︁'
+'teams-for-linux' = '🗩︁'
+'clonehero' = '︁'
+'/trash:/ .*Dolphin/' = '︁'
+#'/home/.*Documents – Dolphin/' = ''
+'org.kde.dolphin' = ''
+'/pcmanfm/' = ''
+'pcmanfm-qt' = ''
+'pcmanfm-gtk3' = ''
+'/home/.*Dolphin/' = ''
+'org.kde.ark' = ''
+'firefox' = ''
+'Nightly' = ''
+'firefoxdeveloperedition' = ''
+'Google-chrome' = ''
+'Chromium' = ''
+'Chromium-browser' = ''
+'org.kde.kcharselect' = ''
+'Zim' = ''
+'image-roll' = ''
+'pavucontrol' = ''
+'obs' = ''
+'galculator' = '🖩'
+'mpv' = '🎞︁'
+'yuzu' = '︁'
+'rpcs3' = '︁'
+'blueberry.py' = '' 
+'com.github.wwmm.easyeffects' = ''
+'citra' = '︁'
+'wdisplays' = '🖵'
+'Pinta' = '🖌'
+'dolphin-emu' = '︁'
+'GParted' = '🖴︁'
+'/GParted/' = '🖴︁'
+'stoken-gui' = ''
+'polkit-gnome-authentication-agent-1' = '︁'
+'gcr-prompter' = '︁'
+'org.inkscape.Inkscape' = '🖋'
+'audacity' = '︁'
+'anki' = { type = 'generic', value = ''}
+'/(?i)settings*/' = { type = 'generic', value = ''}
+'/(?i)calendar*/' = { type = 'generic', value = ''}
+'foot' = ''
+'/YouTube/' = ''
+'org.qutebrowser.qutebrowser' = ''
+'whatsapp-for-linux' = ''
+'Ardour-6.9.0' = '🎵'
+'/Pcmanfm/' = ''
+'dota2' = '⚔'
+'Gimp' = ''
+'/pdf/' = ''
+#do all the dolphin folders
+#❄︁
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#☁
+#︁
+#
+#
+#
+#
+#
+#
+#
+#
+#☎︁
+#︁
+#✉︁
+#🗩︁
+#︁
+#︁
+#︁
+#⚙︁
+#︁
+#︁
+#︁
+#︁
+#︁
+#︁
+#🖌︁
+#︁

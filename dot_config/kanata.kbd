@@ -18,7 +18,9 @@
   ;; is preferable; I recall reading that it's less likely to change names on you,
   ;; but I didn't find any keyboard device in there in my VM.
 ;;  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
-  linux-dev /dev/input/by-path/pci-0000\:00\:14.0-usb-0\:3.2.3.3\:1.0-event-kbd
+  linux-dev /dev/input/by-id/usb-TypeMatrix.com_USB_Keyboard-event-kbd
+;;  linux-dev /dev/input/by-path/pci-0000\:00\:14.0-usb-0\:3.2.3.3\:1.0-event-kbd
+;;linux-dev /dev/input/event4;
 )
 
 ;; Only one defsrc is allowed.
@@ -45,26 +47,16 @@
 ;; The dvorak layer remaps the keys to the dvorak layout. In addition there is
 ;; another tap-hold key: @cap. This key retains caps lock functionality when
 ;; quickly tapped but is read as left-control when held.
+
 (deflayer dvorak
                                  del
-  @grl  @m1  @m2  @m3  @m4  @m5       @m6  @m7  @m8  @m9  @m0  [    ]
-  @tab  '    ,    .    p    y    bspc f    g    c    r    l    /    =
-  lsft  @a   o    e    u    i    ret  d    h    t    n    @s   -    @rsft
+  @grl  1    2    3    4    5         6    7    8    9    0    [    ]
+  tab   '    ,    .    p    y    bspc f    g    c    r    l    /    =
+  lsft  a    o    @ctl_e    @sft_u    @i    ret  @d    @sft_h    @ctl_t    @alt_n    @met_s   -    @rsft
         ;    q    j    k    x         b    m    w    v    z    \ 
   lctl  @meh                @spc                 
         lmet @e                                 @ralt               @multra
 )
-
-(deflayer ted
-                                 del
-  @grl  @m1  @m2  @m3  @m4  @m5       @m6  @m7  @m8  @m9  @m0  XX   XX
-  @tab  XX   @*   u    d    /    bspc b    f    l    w    j    @?   XX
-  lsft  @a   o    i    t    g    ret  ,    s    n    r    @h   XX   @rsft
-        @@   ;    y    p    k         v    c    m    x    q    XX
-  lctl  @meh                @spc                 
-        lmet @e                                 @ralt               @multra
-)
-
 
 (defalias
   * S-8
@@ -76,18 +68,6 @@
   lpar S-9
   > S-.
   rpar S-0
-
-
-  m1 M-1
-  m2 M-2
-  m3 M-3
-  m4 M-4
-  m5 M-5
-  m6 M-6
-  m7 M-7
-  m8 M-8
-  m9 M-9
-  m0 M-0
 )
 
 (deflayer qwerty
@@ -103,7 +83,7 @@
 (deflayer lower
                                  _
   @grl  S-1  S-2  S-3  S-4  S-5       S-6  S-7  S-8  S-9  S-0  S-[  S-]
-  _     _    _    _    _    _    _    _    _    _    _    _    _    _
+  _     S-1  S-2  S-3  S-4  S-5  _    S-6  S-7  S-8  S-9  S-0  S-[  S-]
   _     4    3    2    1    0    _    5    6    7    8    9    -    _
         _    _    _    _    _         _    _    _    _    _    _
   _     _                   _                 
@@ -112,7 +92,7 @@
 
 (deflayer higher
                                  _
-  @grl  @é   @ê   @è   @à   @ù        @ç   S-7  S-8  S-9  S-0  S-[  S-]
+  @grl  S-1  S-2  S-3  S-4  S-5       S-6  S-7  S-8  S-9  S-0  S-[  S-]
   _     grv  S-8  S-=  '    S-4  _    S-5  S-'  =    XX   S-6  S-7  _
   _     @_   @<   S-{  [    @lpar _   @rpar ]   S-}  @>   -    _    _
         _    _    _    _    _         _    _    _    _    _    _
@@ -124,7 +104,7 @@
                                  _
   @grl  _    _    _    _    _         _    _    _    _    _    _    _
   _     _    _    _    _    _    _    _    _    _    _    _    _    _
-  _     _    _    _    _    _    _    _    _    _    _    _    _    _
+  _     S-1  S-2  S-3  S-4  S-5  _    S-6  S-7  S-8  S-9  S-0  S-[  S-]
         _    _    _    _    _         _    _    _    _    _    _
   _     _                   _                 
         _    _                                  _                   _
@@ -144,22 +124,36 @@
                                  _
   @grl  _    _    _    _    _         _    _    _    _    _    _    _
   _     _    _    _    _    _    _    _    _    _    _    _    _    _
-  _     _    _    _    _    _    _    _    _    _    _    _    _    _
+  _     lmet lalt lctl lsft _    _    _    left up   down rght _    _
         _    _    _    _    _         _    _    _    _    _    _
   _     _                   _                 
         _    _                                  _                   _
 )
 
-(defalias é (macro A-e e))
-(defalias É (macro A-e S-e))
-(defalias è (macro A-grv e))
-(defalias ê (macro A-i e))
-(defalias Ê (macro A-i S-e))
-(defalias à (macro A-grv a))
-(defalias À (macro A-grv S-a))
-(defalias ù (macro A-grv u))
-(defalias ç A-c)
-(defalias Ç A-S-c)
+
+(defalias
+    met_a (tap-hold-release 150 150 a lmet)
+    alt_o (tap-hold-release 150 150 o lalt)
+    ctl_e (tap-hold-release 150 150 e lctl)
+    sft_u (tap-hold-release 150 150 u lsft)
+
+    i (tap-hold-release 150 150 i sldr)
+    d (tap-hold-release 150 150 d sldr)
+
+    sft_h (tap-hold-release 150 150 h rsft)
+    ctl_t (tap-hold-release 150 150 t rctl)
+    alt_n (tap-hold-release 150 150 n lalt)
+    met_s (tap-hold-release 150 150 s rmet)
+)
+
+(defseq Blueway (b l))
+(deffakekeys Blueway (macro S-b l u e w a y))
+
+(defseq ST (s t))
+(deffakekeys ST (macro S-s y l v a i n spc S-t e d o l d i))
+
+(defseq Sylvain (s s))
+(deffakekeys Sylvain (macro S-s y l v a i n))
 
 
 ;; defalias is used to declare a shortcut for a more complicated action to keep
@@ -174,13 +168,6 @@
   ;; layer-switch changes the base layer.
   dvk (layer-switch dvorak)
   qwr (layer-switch qwerty)
-  ted (layer-switch ted)
-
-  ;; del triple => vim save
-  del (tap-dance 200 (del (macro esc S-; w enter) (macro esc S-; w q enter)))
-
-  ;; use cap as esc, long as ctrl
-  cap (tap-hold 200 200 esc lctl)
 
   ;; long press keep all the way up / down
   pgup (tap-hold 200 200 pgup home)
@@ -188,24 +175,15 @@
 
   ;; lower - higher layers
   rsft lalt
-  e    (tap-hold 200 200 e (layer-toggle lower))
+  e    (tap-hold 150 150 e (layer-toggle lower))
   lalt (layer-toggle lower)
   ralt (layer-toggle higher)
 
-  spc (tap-hold 200 200 spc (layer-toggle spaced))
+  spc (tap-hold 150 150 spc (layer-toggle spaced))
   ultra (layer-toggle ultra) 
   multra (layer-toggle multra) 
 
   meh (multi lctl alt lsft lmet)
-
-
-  ;; use pinky keys as shifts
-  a (tap-hold 200 200 a lsft)
-  s (tap-hold 200 200 s rsft)
-  h (tap-hold 200 200 h rsft)
-
-  ;; -- Mod-tap --
-  tab (tap-hold 200 200 tab lalt)
 )
 
 ;; The `lrld` action stands for "live reload". This will re-parse everything
@@ -219,7 +197,7 @@
 ;; behaviour is used when pressing that key.
 (deflayer layers
                                  _
-  _     lrld @qwr @dvk @ted _         _    _    _    _    _    _    _ 
+  _     lrld @qwr @dvk _    _         _    _    _    _    _    _    _ 
   _     _    _    _    _    _    _    _    _    _    _    _    _    _
   _     _    _    _    _    _    _    _    _    _    _    _    _    _
         _    _    _    _    _         _    _    _    _    _    _
