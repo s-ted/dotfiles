@@ -66,5 +66,5 @@ driver = "upower"
 [[block]]
 block = "time"
 [block.format]
-full = " $icon $timestamp.datetime(f:'%a %Y-%m-%d %R %Z', l:fr_FR) "
+full = " $icon $timestamp.datetime(f:'%a %Y-%m-%d <b>%R</b> %Z', l:fr_FR) "
 short = " $icon $timestamp.datetime(f:%R) "
