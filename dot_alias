@@ -36,3 +36,11 @@ alias -g X='| xclip -selection clipboard'
 alias -g LL="2>&1 | less"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
+
+alias npm='pnpm'
+
+alias ua-update-all='sudo true; \
+     rate-mirrors --entry-country FR --protocol https arch --max-delay 21600 | sudo tee /etc/pacman.d/mirrorlist \
+  && paccache -r \
+  && paru -Sc --aur --noconfirm \
+  && paru -Syyu'
