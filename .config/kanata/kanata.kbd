@@ -1,0 +1,41 @@
+(defcfg
+  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd:/dev/input/by-id/usb-TypeMatrix.com_USB_Keyboard-event-kbd
+
+  process-unmapped-keys yes
+  linux-unicode-u-code ;
+  concurrent-tap-hold yes
+
+  log-layer-changes no
+)
+
+;; Timing variables for tap-hold effects.
+(defvar
+  ;; The key must be pressed twice in 200ms to enable repetitions.
+  tap-timeout 200
+  ;; The key must be held 200ms to become a layer shift.
+  hold-timeout 200
+  ;; Slightly higher value for typing keys, to prevent unexpected hold effect.
+  long-hold-timeout 300
+)
+
+;;(include src/ergol.kbd)
+
+
+(include src/us.kbd)
+;;(include layer/qwerty.kbd)
+;;(include layer/dvorak.kbd)
+;; (include layer/accent.kbd)
+
+(include layer/symbols.kbd)
+(include layer/navigation.kbd)
+(include layer/accent.kbd)
+(include layer/lower.kbd)
+(include layer/ultra.kbd)
+(include layer/multra.kbd)
+
+
+;;(include alias/ergol.kbd)
+(include alias/qwerty.kbd)
+
+(include alias/accent.xbd)
+(include alias/layer-switch.kbd)

@@ -1,0 +1,18 @@
+(deflayer spaced
+  @grl  _    _    _    _    _         _    _    _    _    _    _    _
+  _     @!   @@   @#   @$   @%        @^   @&   @*  @lpar @rpar _    _
+  _     @nm  @na  @ns  @nc  _         home left up   down rght end  _
+        1    2    3    4    5         6    7    8    9    0    _
+  _     _ _ _ _ _
+  _ _ _ _
+)
+
+(defalias
+  dot n
+
+  nm (tap-hold $tap-timeout $hold-timeout a lmet)
+  na (tap-hold $tap-timeout $hold-timeout a lalt)
+  ns (tap-hold $tap-timeout $hold-timeout @dot lctl)
+  nc (tap-hold $tap-timeout $hold-timeout tab lsft)
+)
+

@@ -1,0 +1,35 @@
+(defsrc
+  grv   1    2    3    4    5         6    7    8    9    0    -    =
+  tab   q    w    e    r    t         y    u    i    o    p    [    ]
+  lsft  a    s    d    f    g         h    j    k    l    ;    '    rsft
+        z    x    c    v    b         n    m    ,    .    /    \
+  lctl  spc  lmet lalt ralt rctl
+  left up down rght
+)
+
+(defalias
+  grl (tap-hold $tap-timeout $hold-timeout grv (layer-toggle layers))
+
+  ;; layer-switch changes the base layer.
+  ;; dvk (layer-switch dvorak)
+  qwr (layer-switch qwerty)
+)
+
+(deflayer qwerty
+  @grl  _    _    _    _    _         _    _    _    _    _    _    _
+  _     _    _    _    _    _         _    _    _    _    _    _    _
+  @lsft @aa  @ss  @dd  @ff  g         h    @jj  @kk  @ll  _    _    @rsft
+        _    _    _    _    _         _    _    _    _    _    _
+  XX    @spc lmet @e @ralt @multra
+  XX XX XX XX
+)
+
+
+(deflayer layers
+  _     lrld @qwr _    _    _         _    _    _    _    _    _    _
+  _     _    _    _    _    _         _    _    _    _    _    _    _
+  _     _    _    _    _    _         _    _    _    _    _    _    _
+        _    _    _    _    _         _    _    _    _    _    _
+  _     _ _ _ _ _
+  _  _  _  _
+)

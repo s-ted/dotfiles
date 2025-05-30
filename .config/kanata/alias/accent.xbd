@@ -1,0 +1,50 @@
+(defalias
+  â (macro RA-S-6 a)
+  ç (macro RA-, c)
+  œ (macro RA-o e)
+  ô (macro RA-S-6 o)
+
+  à (macro RA-grv a)
+  é (macro RA-e ')
+  è (macro RA-grv e)
+  ê (macro RA-S-6 e)
+
+  î (macro RA-S-6 i)
+  ï (macro RA-S-' i)
+  ù (macro RA-u grv)
+
+  æ (macro RA-a e)
+  … (macro RA-. .)
+
+  µ (macro RA-m u)
+  û (macro RA-S-6 u)
+
+  ^ S-6
+  < <
+  > S-<
+  @ S-0
+  lpar (multi o h)
+  rpar (multi o j)
+  + S-=
+  - c
+  / -
+  dbq S-'
+  ~ S-grv
+  _ S--
+  # S-9
+  | S-\
+  ! S-o
+  : S-n
+  ? S-c
+  ; S-.
+  $ S-4
+  % S-5
+  & S-7
+  * S-8
+
+  ms↑ (movemouse-up 1 1)
+  ms← (movemouse-left 1 1)
+  ms↓ (movemouse-down 1 1)
+  ms→ (movemouse-right 1 1)
+)
+

@@ -1,0 +1,10 @@
+;; unused
+(deflayer qwerty
+  @grl  _    _    _    _    _         _    _    _    _    _    _    _
+  _     _    _    _    _    _         _    _    _    _    _    _    _
+  @lsft @aa  @ss  @dd  @ff  g         h    @jj  @kk  @ll  _    _  @rsft
+        _    _    _    _    _         _    _    _    _    _    _
+  XX    @spc lmet @e @ralt @multra
+  XX XX XX XX
+)
+

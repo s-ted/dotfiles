@@ -1,0 +1,10 @@
+(defalias
+    aa (tap-hold $tap-timeout $hold-timeout a lmet)
+    ss (tap-hold $tap-timeout $hold-timeout s lalt)
+    dd (tap-hold $tap-timeout $hold-timeout d lctl)
+    ff (tap-hold $tap-timeout $hold-timeout f lsft)
+    jj (tap-hold $tap-timeout $hold-timeout j rsft)
+    kk (tap-hold $tap-timeout $hold-timeout k ctl)
+    ll (tap-hold $tap-timeout $hold-timeout l ralt)
+ ;; ; (tap-hold $tap-timeout $hold-timeout ; lmet)
+)

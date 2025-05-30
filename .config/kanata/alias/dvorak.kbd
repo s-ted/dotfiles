@@ -1,0 +1,14 @@
+(defalias
+    aa (tap-hold $tap-timeout $hold-timeout a lmet)
+    oo (tap-hold $tap-timeout $hold-timeout o lalt)
+    ee (tap-hold $tap-timeout $hold-timeout e lsft)
+    uu (tap-hold-release $tap-timeout $hold-timeout u lctl)
+
+    i (tap-hold $tap-timeout $hold-timeout i sldr)
+    d (tap-hold $tap-timeout $hold-timeout d sldr)
+
+    hh (tap-hold-release $tap-timeout $hold-timeout h rstl)
+    tt (tap-hold $tap-timeout $hold-timeout t rsft)
+    nn (tap-hold $tap-timeout $hold-timeout n lalt)
+    ss (tap-hold $tap-timeout $hold-timeout s rmet)
+)

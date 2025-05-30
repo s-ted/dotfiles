@@ -1,0 +1,15 @@
+(defalias
+  lsft (tap-hold $tap-timeout $hold-timeout esc (layer-toggle higher))
+  rsft (layer-toggle accent)
+  e    (tap-hold $tap-timeout $hold-timeout e (layer-toggle higher))
+  lalt (layer-toggle symbols)
+  ralt (layer-toggle symbols)
+
+  spc (tap-hold $tap-timeout $hold-timeout spc (layer-toggle spaced))
+  ultra (layer-toggle ultra)
+  multra (layer-toggle multra)
+
+  meh (multi lctl alt lsft lmet)
+
+  r (tap-hold $tap-timeout $hold-timeout r (layer-toggle accent))
+)

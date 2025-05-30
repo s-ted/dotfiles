@@ -1,0 +1,8 @@
+(deflayer dvorak
+  @grl  1    2    3    4    5         6    7    8    9    0    [    ]
+  tab   '    ,    .    p    y         f    g    c    @r   l    /    =
+  @lsft @aa  @oo  @ee  @uu  @ii       @dd  @hh  @tt  @nn  @ss   -    @rsft
+        ;    q    j    k    x         b    m    w    v    z    \
+  XX    @spc lmet @e @ralt @multra
+  XX XX XX XX
+)
