@@ -2,6 +2,7 @@
 .config/fuzzel
 .config/ghostty
 .config/kanata
+.config/kanata.kbd
 .config/lazygit
 .config/mise
 .config/niri
