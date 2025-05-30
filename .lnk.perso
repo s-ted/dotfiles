@@ -1,2 +1,3 @@
 .earthly/config.yml
+.gitconfig-perso
 .ssh/config
