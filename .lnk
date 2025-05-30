@@ -12,4 +12,5 @@
 .config/yazi
 .config/zed
 .config/zellij
+.gitattributes
 .gitconfig
