@@ -1,0 +1,81 @@
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore_global
+[help]
+  autocorrect = 20
+[user]
+  email = sylvain.git@contact.tedoldi.fr
+  name = Sylvain Tedoldi
+[alias]
+  up = pull origin
+  st = status -uno
+  di = diff
+  co = checkout
+  ci = commit
+  br = branch
+  sta = stash
+  pop = stash pop
+  l = log --topo-order --decorate # --first-parent
+  m = merge --no-ff --no-commit
+  ff = merge --ff-only
+  gr = grep -n
+  assume = update-index --skip-worktree
+  unassume = update-index --no-skip-worktree
+  assumed = "!git ls-files -v | grep ^[hS]"
+	g = grep --break --heading --line-number
+  ignored = !git ls-files -v $(git rev-parse --show-toplevel) | (grep '^[[:lower:]]' || echo 'None ignored.') && echo '\nIgnore changes with: git update-index --assume-unchanged <file> \nor track again with: git update-index --no-assume-unchanged <file>'
+[color]
+  ui = true
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+[push]
+  default = current
+[gui]
+	fontui = -family \"Fira Code\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"Fira Code\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
+	warndetachedcommit = true
+	diffopts = --ignore-space-change
+	tabsize = 2
+	spellingdictionary = none
+
+
+[diff]
+#    tool = vimdiff
+    colorMoved = default
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
+[mergetool "vimdiff"]
+    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[rerere]
+	enabled = 1
+[pull]
+	rebase = true
+[rebase]
+	instructionFormat = "[%an - %ar] %s"
+	autoStash = true
+	ff = only
+[init]
+	defaultBranch = main
+
+
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[delta]
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = Dracula
+    navigate = true
+    line-numbers = true
+
+[interactive]
+    diffFilter = delta --color-only
+[gitbutler]
+	signCommits = false
+	aiModelProvider = openai
