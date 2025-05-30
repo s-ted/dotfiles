@@ -1,3 +1,4 @@
+.alias
 .cargo/config.toml
 .config/fish
 .config/fuzzel

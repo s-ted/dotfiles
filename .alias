@@ -1,0 +1,49 @@
+#alias v='f -e vim' # quick opening files with vim
+#alias v='f -t -e vim -b viminfo'
+alias o='a -e xdg-open' # quick opening files with xdg-open
+
+alias cat='bat'
+
+alias sg="sk --ansi -i -c 'rg --color=always --line-number \"{}\"' --delimiter ':' --preview 'bat --color always -H {2} {1}'"
+
+alias sf="sk --ansi -i --delimiter ':' --preview 'bat --color always -H {2} {1}'"
+
+#alias gt='git town'
+
+
+alias ls='eza -F'
+alias l='eza -lhF --git --time-style iso -snew'
+alias ll='l -a'
+
+alias ps='procs'
+alias tig='gitui'
+
+
+
+alias m='less'
+alias j='jobs'
+
+# find in history
+alias hg='fc -l 0|grep'
+
+# global aliases (do not need to be at the beginning of the command line)
+alias -g G='| grep' 2>/dev/null 
+alias -g S='| sort -h' 2>/dev/null
+alias -g L="| bat" 2>/dev/null
+alias -g X='| wl-copy' 2>/dev/null
+
+abbr --add G --position anywhere '| grep' 2>/dev/null
+abbr --add S --position anywhere '| sort -h' 2>/dev/null
+abbr --add L --position anywhere '| bat' 2>/dev/null
+abbr --add X --position anywhere '| wl-copy' 2>/dev/null
+
+alias ua-update-all='sudo true; \
+     rate-mirrors --entry-country FR --country-neighbors-per-country 1 --country-test-mirrors-per-country 5 --protocol https --max-jumps 1 --eps 1.0 arch --max-delay 21600 | sudo tee /etc/pacman.d/mirrorlist \
+  && paccache -r \
+  && paru -Sc --aur --noconfirm \
+  && paru -Syyu'
+
+alias vim='kak'
+alias sudo='sudo-rs'
+
+alias halt="shutdown -h now"
