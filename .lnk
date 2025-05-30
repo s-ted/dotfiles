@@ -1,5 +1,6 @@
 .config/fish
 .config/fuzzel
+.config/ghostty
 .config/kanata
 .config/mise
 .config/niri
