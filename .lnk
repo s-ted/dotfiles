@@ -1,3 +1,4 @@
+.cargo/config.toml
 .config/fish
 .config/fuzzel
 .config/ghostty
