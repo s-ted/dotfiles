@@ -1,0 +1,224 @@
+zoxide forex
+z forex
+ls
+cat .env
+cat .envrc
+source .envrc
+source .env
+export CAPITALCOM_API_KEY='PpyM14fR4gp3Mwzd'
+export --help
+cat .env
+cat .envrc
+CAPITALCOM_API_KEY='PpyM14fR4gp3Mwzd'
+CAPITALCOM_API_KEY=PpyM14fR4gp3Mwzd
+export CAPITALCOM_API_KEY=PpyM14fR4gp3Mwzd
+env
+env | sort -h
+env | sort
+env | grep -i capi
+let CST=PkXrIN0Ib6ygoEDdX04TdEmO
+let CST = "PkXrIN0Ib6ygoEDdX04TdEmO"
+let x_security_token = "hAFMz9o73jItsfCz4xVy64It98nCAwv"
+"" | to json | http post $"($env.CAPITALCOM_API_URL)/v1/accounts" {<\n>  X-CAP-API-KEY: $env.CAPITALCOM_API_KEY, CST: $CST }
+"" | to json | http post $"($env.CAPITALCOM_API_URL)/v1/accounts" { X-CAP-API-KEY: $env.CAPITALCOM_API_KEY, CST: $CST }
+http post --help
+"" | to json | http post $"($env.CAPITALCOM_API_URL)/v1/accounts" --headers [X-CAP-API-KEY $env.CAPITALCOM_API_KEY, CST: $CST]
+http post $"($env.CAPITALCOM_API_URL)/v1/accounts" --headers [X-CAP-API-KEY $env.CAPITALCOM_API_KEY, CST: $CST]
+http post $"($env.CAPITALCOM_API_URL)/v1/accounts"
+echo $"($env.CAPITALCOM_API_URL)/v1/accounts"
+http post $"($env.CAPITALCOM_API_URL)/v1/accounts"
+http post https://demo-api-capital.backend-capital.com/api/v1/accounts
+http post $"($env.CAPITALCOM_API_URL)/v1/accounts" --headers [X-CAP-API-KEY $env.CAPITALCOM_API_KEY, CST: $CST] ""
+http post $"($env.CAPITALCOM_API_URL)/v1/accounts" --headers [X-CAP-API-KEY $env.CAPITALCOM_API_KEY, CST $CST] ""
+http post $"($env.CAPITALCOM_API_URL)/v1/accounts" --headers [X-CAP-API-KEY $env.CAPITALCOM_API_KEY, CST $CST] "{}"
+"" | to json | http post $"($env.CAPITALCOM_API_URL)/v1/accounts" --headers [X-CAP-API-KEY $env.CAPITALCOM_API_KEY, CST $CST] $in
+"" | to json | http post $"($env.CAPITALCOM_API_URL)/v1/accounts" --headers [X-CAP-API-KEY $env.CAPITALCOM_API_KEY CST $CST] $in
+"" | to json | http post $"($env.CAPITALCOM_API_URL)/v1/accounts" --headers [X-CAP-API-KEY $env.CAPITALCOM_API_KEY] --headers [CST $CST] $in
+"" | to json | http post $"localhost:4242/v1/accounts" --headers [X-CAP-API-KEY $env.CAPITALCOM_API_KEY] --headers [CST $CST] $in
+"" | to json | http post $"http://localhost:4242/v1/accounts" --headers [X-CAP-API-KEY $env.CAPITALCOM_API_KEY] --headers [CST $CST] $in
+"" | to json | http post $"http://localhost:4242/v1/accounts" --headers [X-CAP-API-KEY $env.CAPITALCOM_API_KEY CST $CST] $in
+http post $"http://localhost:4242/v1/accounts" --headers [X-CAP-API-KEY $env.CAPITALCOM_API_KEY CST $CST] --content-type "application/json" ""
+http post $"($env.CAPITALCOM_API_URL)/v1/accounts" --headers [X-CAP-API-KEY $env.CAPITALCOM_API_KEY CST $CST] --content-type "application/json" ""
+http --help
+http post --help
+http post --full $"($env.CAPITALCOM_API_URL)/v1/accounts" --headers [X-CAP-API-KEY $env.CAPITALCOM_API_KEY CST $CST] --content-type "application/json" ""
+http post $"($env.CAPITALCOM_API_URL)/v1/accounts" --headers [X-CAP-API-KEY $env.CAPITALCOM_API_KEY CST $CST] --content-type "application/json" "{}"
+http get $"($env.CAPITALCOM_API_URL)/v1/accounts" --headers [X-CAP-API-KEY $env.CAPITALCOM_API_KEY CST $CST]
+http get $"($env.CAPITALCOM_API_URL)/v1/accounts" --headers [X-SECURITY_TOKEN $x_security_token CST $CST]
+http get $"($env.CAPITALCOM_API_URL)/v1/accounts" --headers [X-SECURITY-TOKEN $x_security_token CST $CST]
+echo $CST
+echo $x_security_token
+let x_security_token = "JK40RIYQHioGn7LbIYoO3EhRJF2QDjQ"
+let CST = "1Aillt6gfO81k47fajpX1twO"
+http get $"($env.CAPITALCOM_API_URL)/v1/accounts" --headers [X-SECURITY-TOKEN $x_security_token CST $CST]
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EUR_USD" --headers [X-SECURITY-TOKEN $x_security_token CST $CST]
+http get $"($env.CAPITALCOM_API_URL)/v1/marketnavigation" --headers [X-SECURITY-TOKEN $x_security_token CST $CST]
+http get $"($env.CAPITALCOM_API_URL)/v1/markets" --headers [X-SECURITY-TOKEN $x_security_token CST $CST]
+http get $"($env.CAPITALCOM_API_URL)/v1/markets" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | where instrumentType = "FOREX"
+http get $"($env.CAPITALCOM_API_URL)/v1/markets" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get markets | where instrumentType = "FOREX"
+http get $"($env.CAPITALCOM_API_URL)/v1/markets" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get markets | where instrumentType == "FOREX"
+http get $"($env.CAPITALCOM_API_URL)/v1/markets" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get markets | where instrumentType == "CURRENCIES"
+http get $"($env.CAPITALCOM_API_URL)/v1/markets" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get markets | where instrumentType == "CURRENCIES" | where epic == "EURUSD"
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD" --headers [X-SECURITY-TOKEN $x_security_token CST $CST]
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices | { date: $snapshotTimeUtc, open: $openPrice.bid }
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices | { date: $in.snapshotTimeUtc, open: $in.openPrice.bid }
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices | { date: $in.snapshotTimeUtc, open: $in.openPrice.bid, close: $in.closePrice.bid }
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices | { date: $in.snapshotTimeUtc, open: $in.openPrice.bid, high: $in.highPrice.bid, low: $in.lowPrice.bid, close: $in.closePrice.bid }
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | select prices | { date: $in.snapshotTimeUtc, open: $in.openPrice.bid, high: $in.highPrice.bid, low: $in.lowPrice.bid, close: $in.closePrice.bid }
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | select prices
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=10" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | select prices
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=10" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=10" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices | to table
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=10" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices | each {|x| {date: $x.snapshotTimeUTC } }
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | select prices | each {|x| { date: $x.snapshotTimeUtc, open: $x.openPrice.bid, high: $x.highPrice.bid, low: $x.lowPrice.bid, close: $x.closePrice.bid } }
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices | each {|x| { date: $x.snapshotTimeUtc, open: $x.openPrice.bid, high: $x.highPrice.bid, low: $x.lowPrice.bid, close: $x.closePrice.bid } }
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices | each {|x| { date: $x.snapshotTimeUtc, open: $x.openPrice.bid, high: $x.highPrice.bid, low: $x.lowPrice.bid, close: $x.closePrice.bid } } | to csv
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices | each {|x| { date: $x.snapshotTimeUtc, open: $x.openPrice.bid, high: $x.highPrice.bid, low: $x.lowPrice.bid, close: $x.closePrice.bid } } | to csv --noheaders 
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices | each {|x| { date: $x.snapshotTimeUtc, open: $x.openPrice.bid, high: $x.highPrice.bid, low: $x.lowPrice.bid, close: $x.closePrice.bid } } | to csv --noheaders  --separator "\t"
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices | each {|x| { date: $x.snapshotTimeUtc, open: $x.openPrice.bid, high: $x.highPrice.bid, low: $x.lowPrice.bid, close: $x.closePrice.bid, volume: 0, other: 0 } } | to csv --noheaders  --separator "\t"
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices | each {|x| { date: ($x.snapshotTimeUtc | str replace "T" ""), open: $x.openPrice.bid, high: $x.highPrice.bid, low: $x.lowPrice.bid, close: $x.closePrice.bid, volume: 0, other: 0 } } | to csv --noheaders  --separator "\t"
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices | each {|x| { date: ($x.snapshotTimeUtc | str replace "T" " "), open: $x.openPrice.bid, high: $x.highPrice.bid, low: $x.lowPrice.bid, close: $x.closePrice.bid, volume: 0, other: 0 } } | to csv --noheaders  --separator "\t"
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices | each {|x| { date: ($x.snapshotTimeUtc | str replace "T" " "), open: $x.openPrice.bid, high: $x.highPrice.bid, low: $x.lowPrice.bid, close: $x.closePrice.bid, volume: 0, other: 0 } } | to csv --noheaders  --separator "\t" | save CAPITAL_COM_M5.csv
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=2000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices | each {|x| { date: ($x.snapshotTimeUtc | str replace "T" " "), open: $x.openPrice.bid, high: $x.highPrice.bid, low: $x.lowPrice.bid, close: $x.closePrice.bid, volume: 0, other: 0 } } | to csv --noheaders  --separator "\t" | save CAPITAL_COM_M5.csv
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices | each {|x| { date: ($x.snapshotTimeUtc | str replace "T" " "), open: $x.openPrice.bid, high: $x.highPrice.bid, low: $x.lowPrice.bid, close: $x.closePrice.bid, volume: 0, other: 0 } } | to csv --noheaders  --separator "\t" | save CAPITAL_COM_M5.csv
+http get $"($env.CAPITALCOM_API_URL)/v1/prices/EURUSD?resolution=MINUTE_5&max=1000&to=2024-10-02T05:30:00" --headers [X-SECURITY-TOKEN $x_security_token CST $CST] | get prices | each {|x| { date: ($x.snapshotTimeUtc | str replace "T" " "), open: $x.openPrice.bid, high: $x.highPrice.bid, low: $x.lowPrice.bid, close: $x.closePrice.bid, volume: 0, other: 0 } } | to csv --noheaders  --separator "\t" | save CAPITAL_COM_M5_A.csv
+cat CAPITAL_COM_M5_A.csv
+chmod +x scrap.nu
+./scrap.nu
+from xml --help
+./scrap.nu
+$env.NU_PLUGIN_DIRS
+ls /home/ted/.config/nushell/plugins
+ls /home/ted/.config/nushell/
+plugin list
+plugin 
+plugin add nu_plugin_query
+($nu.current-exe | path dirname)
+plugin add nu_plugin_query
+plugin list
+nu_plugin_query 
+plugin list
+plugin add nu_plugin_query
+plugin list
+./scrap.nu
+query web --help
+nu_plugin_query --help
+./scrap.nu
+nu_plugin_query --help
+./scrap.nu
+watchexec ./scrap.nu
+nu_plugin_query --help
+nu_plugin_query xml --help
+nu_plugin_query --help xml
+watchexec ./scrap.nu
+str trim
+str trim --help
+str 
+str substring
+help str substring
+help str replace
+watchexec ./scrap.nu
+split
+watchexec ./scrap.nu
+'1.044,99€'
+'1.044,99€' | str replace --regex '[^0-9]' ''
+'1.044,99€' | str replace -all --regex '[^0-9]' ''
+'1.044,99€' | str replace --all --regex '[^0-9]' ''
+'1.044,99€' | str replace --all --regex '[^0-9]' '' | to int
+'1.044,99€' | str replace --all --regex '[^0-9]' '' | as int
+'1.044,99€' | str replace --all --regex '[^0-9]' '' | parse int
+'1.044,99€' | str replace --all --regex '[^0-9]' ''
+'1.044,99€' | str replace --all --regex '[^0-9]' '' | into int 
+'1.044,99€' | str replace --all --regex '[0-9.,]' '' | into int 
+'1.044,99€' | str replace --all --regex '[0-9.,]' ''
+watchexec ./scrap.nu
+1..1
+1..2
+1..1 | par-each {|i| $i * 10 }
+1..3 | par-each {|i| [ ($i * 10) ($i * 100) ] }
+1..3 | par-each {|i| [ ($i * 10) ($i * 100) ] } | flatten
+watchexec ./scrap.nu
+./scrap.nu
+pipr
+help str replace
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9&'-\s]" ''
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9&'- ]" ''
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9&' ]" ''
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9]" ''
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace --all  -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9]" ''
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace --all  -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9 ]" ''
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace --all  -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9]" ' '
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace --all  -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9 ]+" ' '
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace --all  -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9 ]+" ' ' | str replace --all -r ' +' ' '
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace --all  -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9 ]+" ' ' | str replace --all -r ' +' ' ' | split column ' '
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace --all  -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9 ]+" ' ' | str replace --all -r ' +' ' ' | split list ' '
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace --all  -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9 ]+" ' ' | str replace --all -r ' +' ' ' | split words
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace --all  -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9 ]+" ' ' | str replace --all -r ' +' ' ' | split words | sort
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace --all  -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9 ]+" ' ' | str replace --all -r ' +' ' ' | split words | sort-by { str length }
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace --all  -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9 ]+" ' ' | str replace --all -r ' +' ' ' | split words | sort-by --reverse  { str length }
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace --all  -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9 ]+" ' ' | str replace --all -r ' +' ' ' | split words | sort-by --reverse  { str length } | take 5
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace --all  -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9 ]+" ' ' | str replace --all -r ' +' ' ' | split words | sort-by --reverse  { str length } | take 5 | str downcase 
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace --all  -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9 ]+" ' ' | str replace --all -r ' +' ' ' | split words | sort-by --reverse  { str length } | take 5 | str downcase | str join
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace --all  -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9 ]+" ' ' | str replace --all -r ' +' ' ' | split words | sort-by --reverse  { str length } | take 5 | str downcase
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace --all  -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9 ]+" ' ' | str replace --all -r ' +' ' ' | split words | sort-by --reverse  { str length } | take 5 | str downcase | append 'toto'
+'Seresto Collier Grands Chiens – Collier anti puces et anti tiques pour grands chiens de plus de 8 kg – Collier Seresto pour chien 7 à 8 moisde protection, réduit le risque de leishmaniose – Gris' | str replace --all  -r "[^A-Za-zÀ-ÖØ-öø-ÿ0-9 ]+" ' ' | str replace --all -r ' +' ' ' | split words | sort-by --reverse  { str length } | take 5 | str downcase | prepend 'toto'
+1160 / 91
+4wk * 1sec
+4wk * 1
+4wk | into duration --unit ses
+4wk | into duration --unit sec
+4 * 7 * 24 * 60 * 60
+365 / 52 * 7 * 24 * 60 * 60
+365 / 52.0 * 7 * 24 * 60 * 60
+2629746 / (24 * 60 * 60)
+365 / 52.0 * 4 * 24 * 60 * 60
+7 * (24 * 60 * 60)
+52571-4419
+52571 -4419
+52571 - 4419
+52571 * .9 - 4419
+52571 * .9
+6034/42894.9
+6034 / 42894.9
+6034 / 52571
+ls
+1 + 1
+cat spoticar.rdv
+541 / 60
+6034 / 52571
+6034 / 42894.9
+5_554 / 52571
+40_000 - 33000
+7/40
+7 / 40
+175 / 2_510
+(175 / 2_510 + 1)
+(175 / 2_510 + 1) ** 30
+(175 / 2_510 + 1) ** 50
+30 * 2_510
+30 * 2_510 * 30
+4+3+2+4+1.5-2.3-2.3-.4-2.6-2.3
+4 + 3 + 2 + 4 + 1.5 - 2.3 - 2.3 - .4 - 2.6 - 2.3
+167 + 122 - 98 - 103 - 17 - 122 - 3 + 1 + 172 + 63
+182 / (2686 - 182)
+2686 - 182
+18.91 * 35 * (52 - 7)
+157 + 463 + 251 * 2 / 3 + 239
+8400/12
+8400 / 12
+10.18 * 1.055 * 12
+0.126429 * 1.2
+0.126429 * 1.2 * 100
+0.126429 * 1.2 * 176
+556 / 2_489
+open .devcontainer/devcontainer.json
+800 * 12
+800 * 12 * 30
+493 - 200
+365 * 1.5 - 150
+400 * 0.18
+293 / 72
+3_000_000_000 / 40_000
